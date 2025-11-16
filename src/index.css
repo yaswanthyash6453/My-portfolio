@@ -1,13 +1,280 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Dark mode base */
+:root { color-scheme: light dark; }
+.dark { background-color: #0b1220; color: #e6eef8; }
+
+/* Global Font */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ===========================
+   PRELOADER
+=========================== */
+.loader {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(59,130,246,0.4);
+  animation: pulse 1s infinite alternate;
+}
+@keyframes pulse { 
+  to { transform: translateY(-8px) scale(1.05); } 
+}
+
+/* ===========================
+   GLASSMORPHISM CARDS
+=========================== */
+.glass-card,
+.skill-card,
+.project-card,
+.intern-card,
+.skill-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  transition: 0.35s ease;
+}
+
+.dark .glass-card,
+.dark .skill-card,
+.dark .project-card,
+.dark .intern-card,
+.dark .skill-box {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* Hover effects */
+.skill-card:hover,
+.project-card:hover,
+.intern-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(59,130,246,0.4);
+}
+
+/* ===========================
+   SKILL TABS
+=========================== */
+.skill-tab {
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.skill-tab-active {
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  color: white;
+  box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+}
+
+/* Underline Animation */
+.tab-wrapper { position: relative; display: inline-block; }
+.tab-underline {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  border-radius: 10px;
+  transition: width 0.35s ease;
+}
+
+/* ===========================
+   SKILL CARDS (3D Hover)
+=========================== */
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+  transform: rotateX(4deg) rotateY(-4deg) scale(1.03);
+}
+
+/* ===========================
+   TECH BADGE
+=========================== */
+.tech-badge {
+  background: rgba(59,130,246,0.15);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+.dark .tech-badge {
+  background: rgba(59,130,246,0.25);
+}
+
+/* ===========================
+   SKILL BARS
+=========================== */
+.skill-bar {
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(100, 116, 139, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+.skill-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #22c55e);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+  transition: width 1.2s ease-out;
+}
+
+/* ===========================
+   3D FLOAT ANIMATION
+=========================== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===========================
+   SLOW SPIN
+=========================== */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+/* ===========================
+   INTERNSHIP TIMELINE (CENTER LINE)
+=========================== */
+
+.timeline-container {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  transform: translateX(-50%);
+  background: linear-gradient(#3b82f6, #a855f7, #22c55e);
+  border-radius: 20px;
+  box-shadow: 0 0 18px rgba(59,130,246,0.5);
+}
+
+/* left-right alternation */
+.timeline-item {
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.left {
+  text-align: right;
+  padding-right: 55%;
+}
+
+.right {
+  text-align: left;
+  padding-left: 55%;
+}
+
+@media (max-width: 768px) {
+  .left, .right {
+    padding: 0;
+    text-align: left;
+  }
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-fast {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}
+/* Neon Glow Pulse Animation */
+@keyframes glowPulse {
+  0% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.80; transform: scale(1.08); }
+  100% { opacity: 0.45; transform: scale(1); }
+}
+.animate-glowPulse {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Floating particle animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+@keyframes float-fast {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 3s ease-in-out infinite; }
+/* Skill Chip Motion (Mouse Hover Lift) */
+.skill-hover {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.skill-hover:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Skill Glow Pulse On Hover */
+.skill-hover:hover {
+  box-shadow: 0 0 15px rgba(59,130,246,0.6),
+              0 0 25px rgba(147,51,234,0.4);
+}
+.blog-card:hover .blog-card-glow {
+  opacity: 0.6;
+}
+.blog-item:hover {
+  transform: translateX(4px);
+}
+.blog-item:hover {
+  transform: translateX(4px);
 }
