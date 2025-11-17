@@ -67,7 +67,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1C4JPkI2ANLnpX70Y9kzswYMW_gUu5PHJ/view?usp=sharing"
+            href="https://drive.google.com/file/d/1bJ4IBdNFoHlZYfIOC8v7hcff7jrJPRD5/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-xl shadow-lg"

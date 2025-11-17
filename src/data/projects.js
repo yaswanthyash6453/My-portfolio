@@ -3,14 +3,14 @@ const projects = [
     title: "EV Charging Station Finder & Slot Booking",
     tech: ["Flutter", "Dart", "Flask", "MySQL", "Google Maps API"],
     desc: "Full-stack EV charging solution with real-time station search, slot booking, live navigation, and authentication. Integrated Google Maps API with optimized backend APIs.",
-    github: "https://github.com/yaswanthyash6453/EV-Charging-Station-Finder-and-Slot-Booking-Flutter",
+    github: "https://github.com/yaswanthyash6453/EV-Charging-Station-Finder-Slot-Booking.git",
   },
 
   {
     title: "AI Resume Analyzer",
     tech: ["Python", "Flask", "NLP", "Machine Learning"],
     desc: "AI-powered system that extracts skills, evaluates ATS score, and generates improvement suggestions using NLP models with full-stack architecture.",
-    github: "https://github.com/yaswanthyash6453/ai-resume-analyze",
+    github: "https://github.com/yaswanthyash6453/ai-resume-analyzer.git",
   },
 
   {
