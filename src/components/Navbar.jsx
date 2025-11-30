@@ -20,7 +20,6 @@ export default function Navbar() {
           <NavLink to="/education" className={linkClass}>Education</NavLink>
           <NavLink to="/blog" className={linkClass}>Blog</NavLink>
           <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-          <NavLink to="/skills" className={linkClass}>Skills</NavLink>
 
 
           <ThemeToggle />
@@ -35,10 +34,11 @@ export default function Navbar() {
                          <Link to="/">Home</Link>
                          <Link to="/about">About</Link>
                          <Link to="/education">Education</Link>
+                         <Link to="/skills">Skills</Link>
                          <Link to="/projects">Projects</Link>
                          <Link to="/internships">Internships</Link>
                          <Link to="/contact">Contact</Link>
-                         <Link to="/skills">Skills</Link>
+                         
                          <Link to="/blog" className="hover:text-blue-500">Blog</Link>
 
             </div>
